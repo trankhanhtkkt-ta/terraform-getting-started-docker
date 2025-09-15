@@ -31,7 +31,7 @@ resource "docker_image" "nginx" {
 
 resource "docker_container" "nginx" {
   image = docker_image.nginx.image_id
-  name  = "tutorial"
+  name  = var.container_name
   ports {
     internal = 80
     external = 8081 # original tutorial's using 8080 but we use 8081 to avoid conflicts
